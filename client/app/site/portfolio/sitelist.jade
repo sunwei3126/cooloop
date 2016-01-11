@@ -1,0 +1,63 @@
+alert(ng-repeat='alert in alerts', type='{{alert.type}}', close='closeAlert($index)') {{alert.msg}}
+.table-search-v2.panel.panel-grey.margin-bottom-50
+  .panel-heading
+    h3.panel-title.pull-left
+      i.fa.fa-globe
+      |  项目列表
+    .pull-right
+      .btn-group.navbar-right
+        button.btn-u.btn-u-default.btn-u-split-default.dropdown-toggle(data-toggle='dropdown', type='button')
+          i.fa.fa-cog
+          span.sr-only Toggle Dropdown
+        ul.dropdown-menu(role='menu')
+          li
+            a(href='/portfolio')
+              i.fa.fa-arrows-alt
+              |  Portfolio
+          li
+            a(href='#')
+              i.fa.fa-list
+              |  Main Links
+          li.divider
+          li
+            a(href='#')
+              i.fa.fa-cloud-download
+              |  Download All
+    .clearfix
+  
+  
+  .table-responsive
+    table.table.table-bordered.table-striped
+      thead
+        tr
+          th 项目
+          th.hidden-sm 项目简介
+          th 联系方式
+          th 运行状态
+      tbody
+        tr(ng-repeat='site in sites')
+          td
+            img.rounded-x(ng-src='{{getSiteImage(site)}}', alt='', ng-click='show(site)')
+          td.td-width
+            h3
+              a(ng-href='/mysites/{{site._id}}') {{site.sitename}}
+            p
+              | {{site.info}}
+          td
+            h4
+              a(href='#') service@hiEngine.cn
+          td
+            span.label.label-success.rounded(ng-click='show(site)')  OK
+            
+        tr(ng-show='sites.length === 0')
+          td(colspan='5') no documents matched
+        
+  .well(ng-if='pages.total > 1')
+    .btn-group.pull-left
+      button.btn.btn-default(disabled='') Page {{pages.current}} of {{pages.total}}
+      button.btn.btn-default(disabled='') Rows {{items.begin}} - {{items.end}} of {{items.total}}
+    .btn-group.pull-right
+      button.btn.btn-default(ng-class='{disabled: !pages.hasPrev}', ng-click='prev()') Prev
+      button.btn.btn-default(ng-class='{disabled: !pages.hasNext}', ng-click='next()')  Next
+    .clearfix
+

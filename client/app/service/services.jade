@@ -1,0 +1,77 @@
+div(ng-include='"app/navbar/navbar.html"')
+
+.title-box
+  .title-box-text
+    | 上海
+    span.color-green 海竞
+    | 智能科技有限公司 
+  p
+    | 致力于将先进过程控制技术和前沿信息技术应用于传统楼宇自动化行业，提高建筑能源效率，增强信息融合，促进人与建筑和谐相处。
+    
+.one-page
+  .one-page-inner.one-blue
+    .container    
+      .row
+        .col-md-6.margin-bottom-10
+          h1 海竞中央空调智能控制系统
+        
+          p
+            | 海竞中央空调智能控制系统是采用先进过程控制技术和现代信息技术来解决传统中央空调系统自动化水平低、管理粗放、能耗浪费严重等现状的革新性产品。
+          p
+            | 系统按照现场实际情况建立空调系统动态仿真模型，并依据大楼温度分布、天气、季节、时段等因素预测实际负荷，采用人工智能算法自动生成优化控制策略，
+            | 具有传统自控系统所无法比拟的全自动无人值守、高容错、高效节能、简单易用和云/移动监测等诸多功能。
+          a.btn-u.btn-u-green.one-page-btn.btn-link(href='/products/iec')
+            i.fa.fa-external-link
+            |  了解更多
+        .col-md-6
+          img.img-responsive.margin-bottom-10(src='assets/images/iec/iec0.png', alt='')
+  .one-page-inner.one-default
+    .container
+      .row
+        .col-md-6
+          img.img-responsive(src='assets/images/ems/ems1.png', alt='')
+        .col-md-6
+          h1 海竞楼宇能源管理系统
+          p
+            | 海竞楼宇能源管理系统，依照国家标准，应用智能化系统集成技术，采集建筑内各用能系统、设备等分类和分项数据，并对采集到的数据进行处理、审核、存储、统计，
+            | 进而从不同维度对能源供给、分配与使用情况进行分析、展示、报表，使得用能单位能够实时监测用能情况，量化、可视化能效管理，预测用能趋势，全方位掌控能源使用的生命周期。
+          p
+            | 系统为决策层、管理层、操作层分别提供了不同的用能信息，为用能单位建立有效的能源管理体系、优化能源使用和节能减排奠定信息化基础。 
+          a.btn-u.btn-u-red.one-page-btn(href='/products/ems')
+            i.fa.fa-external-link
+            |  了解更多
+  .one-page-inner.one-grey
+    .container
+      .row.margin-bottom-10
+        .col-md-6
+          h1 海竞楼宇实时历史数据库
+          p
+            | 海竞楼宇实时历史数据库是海竞自主研发的一套专用于智能楼宇的实时数据库系统，数据库可对楼宇过程数据进行采集、压缩、存储、检索，并保证数据质量和存取速度。
+            | 系统支持万点、十年、秒级数据存储，同时配套有监视、管理、查询、趋势分析等诸多运维和管理工具。
+          p 
+            | 系统具有良好的开放性，可以通过OPC、WCF、Web API等接口访问数据，
+            | 可同时支持多个客户端并发访问。系统具有很高可用性，支持冗余、备份和数据灾难恢复等安全机制。
+          a.btn-u.btn-u-blue.one-page-btn(href='/products/rtdb')
+            i.fa.fa-external-link
+            |  了解更多
+        .col-md-6
+          img.img-responsive(src='assets/images/rtdb/rtdb0.png', alt='')
+          
+  .one-page-inner.one-default
+    .container
+      .row
+        .col-md-6
+          img.img-responsive(src='assets/images/gateway/gateway0.png', alt='')
+        .col-md-6
+          h1 海竞楼宇通讯网关
+          p
+            | 海竞楼宇通讯网关是针对楼宇自动化、智能楼宇、安防等系统的通讯网关，
+            | 网关可支持多种主流楼宇通讯协议，包括Modbus、OPC、BACnet、oBIX等，并具有协议转换、单位转换、智能数据校验、数据关联验证等高级数据处理功能。
+          p
+            | 此外，网关配有流量监视、趋势分析等管理工具，并具有丰富的二次开发接口，可以通过OPC、WCF、Web API等接口访问数据。
+            | 网关同时支持多个客户端并发访问，具有很高可用性，支持冗余、报警、移动数据推送等安全机制，并可以与海竞楼宇实时历史数据库系统集成，实现数据采集、校验、存储、回溯一体化。              
+          a.btn-u.btn-u-orange.one-page-btn(href='/products/gateway')
+            i.fa.fa-external-link
+            |  了解更多
+
+div(ng-include='"components/footer/footer.html"')        

@@ -1,0 +1,189 @@
+div(ng-include='"app/navbar/navbar.html"')
+
+.job-img
+  .job-banner
+    h2 海竞自主研发的实时数据库系统，是一款针对楼宇过程数据进行采集、存储、分析和展示的数据库产品，可以保存长达十年过程数据，为用户有效分析、精准决策奠定数据基础。
+.full-w-block
+  .container
+    .col-sm-offset-1
+      ul.nav.nav-pills.nav-justified
+        li
+          h2
+            a(href='#storage').areverse
+              i.fa.fa-hdd-o
+              | 高效存储
+        li
+          h2
+            a(href='#interface').areverse
+              i.fa.fa-cogs
+              | 接口广泛
+        li
+          h2
+            a(href='#tools').areverse
+              i.fa.fa-wrench
+              | 完善工具
+        li
+          h2
+            a(href='#open').areverse
+              i.fa.fa-openid
+              | 开放易用
+              
+section#storage.servive-block-light.section-first
+  .container.content-lg.margin-bottom-20
+    .title-box.margin-bottom-20
+      .title-box-text
+        | 高效的
+        span.color-blue 数据引擎 
+      p
+        | 提供7 x 24小时的数据采集，存储，分析以及多客户端并发访问，系统可以存储万点、秒级、十年的楼宇过程数据。
+           
+    .col-md-6
+      img.img-responsive(src='assets/images/rtdb/rtdb1.png', alt='')
+
+    .col-md-6.content-boxes-v3
+      .clearfix.margin-bottom-10
+        i.icon-custom.icon-md.rounded-x.icon-bg-blue.icon-line.fa.fa-share-alt-square
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 高速缓存
+          |                             
+          p
+            | 系统内置高速缓存，用户可以高并发、快速访问实时数据，并支持数据主动推送。
+      |                     
+      .clearfix.margin-bottom-10
+        i.icon-custom.icon-md.rounded-x.icon-bg-blue.icon-line.fa.fa-sort-numeric-desc
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 数据压缩
+          |                             
+          p
+            | 系统内置数据压缩引擎，实时压缩过程数据，减少磁盘用量。
+      |                     
+      .clearfix.margin-bottom-10
+        i.icon-custom.icon-md.rounded-x.icon-bg-blue.icon-line.fa.fa-crop
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 冗余容错
+          |                             
+          p
+            | 数据库服务支持冗余，故障恢复，保证高可用性。
+
+section#interface
+  .container.content-lg.margin-bottom-20
+    .title-box.margin-bottom-20
+      .title-box-text
+        | 强大的
+        span.color-green 楼宇通讯网关
+      p
+        | 系统可以便捷的与海竞楼宇通讯网关集成，通过多种协议，持续收集过程数据。
+        
+    .col-md-6.content-boxes-v3
+      .clearfix.margin-bottom-20
+        i.icon-custom.icon-md.rounded-x.icon-bg-green.icon-line.fa.fa-stumbleupon
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 多协议支持
+          |                           
+          p
+            | 系统可以同时支持OPC, Modbus, BACnet, oBIX等主流楼宇通信协议。
+      |                     
+      .clearfix.margin-bottom-20
+        i.icon-custom.icon-md.rounded-x.icon-bg-green.icon-line.icon-shuffle
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 数据校验与转换
+          |                             
+          p
+            | 系统内置多种数据校验、转换、映射等功能，保证数据质量同时，简化用户工作。
+      |                     
+      .clearfix.margin-bottom-20
+        i.icon-custom.icon-md.rounded-x.icon-bg-green.icon-line.icon-loop
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 灵活的配置
+          |                             
+          p
+            | 系统支持自定义采集周期，断点续传，针对不同场景，采用不同策略。
+    .col-md-6
+      img.img-responsive(src='assets/images/gateway/gateway0.png', alt='')
+        
+section#tools.servive-block-light
+  .container.content-lg.margin-bottom-20
+    .title-box.margin-bottom-20
+      .title-box-text
+        | 完善的
+        span.color-blue 工具链
+      p
+        | 系统内置分析、查询、备份、监视等诸多工具。
+
+    .col-md-6
+      img.img-responsive(src='assets/images/rtdb/rtdb0.png', alt='')
+
+    .col-md-6.content-boxes-v3
+      .clearfix.margin-bottom-20
+        i.icon-custom.icon-md.rounded-x.icon-bg-blue.icon-line.fa.fa-question
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 查询与分析
+          |                             
+          p
+            | 系统内置灵活的查询、分析工具，以表格和图形方式回溯历史数据。
+      |                     
+      .clearfix.margin-bottom-20
+        i.icon-custom.icon-md.rounded-x.icon-bg-blue.icon-line.icon-screen-desktop
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 管理工具
+          | 
+          p
+            | 系统内置丰富的管理工具，既可以实时监视系统运行状况，也支持导出、备份数据。
+      |                     
+      .clearfix.margin-bottom-20
+        i.icon-custom.icon-md.rounded-x.icon-bg-blue.icon-line.icon-calculator
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 自动统计
+          |                             
+          p
+            | 系统支持自动统计，可以定时生成数据报表。
+  
+section#open
+  .container.content-lg
+    .title-box.margin-bottom-20
+      .title-box-text
+        | 功能完善，
+        span.color-green 开放易用
+      p
+        | 采用分布式架构，支持用户认证与授权，同时支持多种访问方式，方便用户集成。
+           
+    .col-md-6.content-boxes-v3
+      .clearfix.margin-bottom-10
+        i.icon-custom.icon-md.rounded-x.icon-bg-green.icon-line.fa.fa-link
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 分布式架构
+          |                             
+          p
+            | 系统采用分布式架构，客户端可以远程访问数据库。
+      |                     
+      .clearfix.margin-bottom-10
+        i.icon-custom.icon-md.rounded-x.icon-bg-green.icon-line.fa.fa-share-square-o
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 开放接口
+          |                             
+          p
+            | 系统支持OPC、Web API、Linq等诸多方式集成，并提供SDK方便客户二次开发。 
+      |                     
+      .clearfix.margin-bottom-10
+        i.icon-custom.icon-md.rounded-x.icon-bg-green.icon-line.fa.fa-cloud-upload
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 云端同步
+          |                             
+          p
+            | 系统支持阿里云数据库上传，可以实时同步数据，并支持断点续传。
+    .col-md-6
+      img.img-responsive(src='assets/images/rtdb/rtdbarch.jpg', alt='')
+
+div(ng-include='"components/footer/footer.html"')                        

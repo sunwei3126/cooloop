@@ -1,0 +1,14 @@
+.tab-v1
+  ul.nav.nav-tabs
+    li(ui-sref-active="active")
+      a(ui-sref='mysites.panel.hmi', href='#', data-toggle='tab') 系统总图
+    li(ui-sref-active="active")
+      a(ui-sref='mysites.panel.equipments', href='#', data-toggle='tab') 设备列表
+    li(ui-sref-active="active")
+      a(ui-sref='mysites.panel.data', href='#', data-toggle='tab') 实时数据
+    li(ui-sref-active="active")
+      a(ui-sref='mysites.panel.alarms', href='#', data-toggle='tab') 报警
+      
+  .tab-content
+    div.slide(ui-view='')   
+        

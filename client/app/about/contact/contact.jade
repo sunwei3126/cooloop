@@ -1,0 +1,80 @@
+div(ng-include='"app/navbar/navbar.html"')
+
+breadcrumb
+
+.container.content
+  .row.margin-bottom-30
+    alert(ng-repeat='alert in alerts', type='{{alert.type}}', close='closeAlert($index)') {{alert.msg}}
+    .col-md-8.mb-margin-bottom-30
+      .headline
+        h2 给我们留言
+      p
+        | 欢迎您在这里留下反馈意见以及联系方式，以便于我们与您进一步沟通。
+      br
+      form(name='contactusForm')
+        .form-group(ng-class="{'has-error': hasError(contactusForm.sender)}")
+          label.control-label(for='sender') 您的姓名:
+          input#sender.form-control(type='text', name='sender', ng-model='contact.sender', required='', server-error='')
+          span.help-block(ng-show="showError(contactusForm.sender, 'required')") 必须填写
+          
+        .form-group(ng-class="{'has-error': hasError(contactusForm.email)}")
+          label.control-label(for='email') 您的邮箱:
+          input#email.form-control(type='email', name='email', ng-model='contact.email', required='', server-error='')
+          span.help-block(ng-show="showError(contactusForm.email, 'required')") 必须填写
+          span.help-block(ng-show="showError(contactusForm.email, 'email')") 请填写您的邮箱
+          span.help-block(ng-show="showError(contactusForm.email, 'server')") {{errfor.email}}
+
+        .form-group(ng-class="{'has-error': hasError(contactusForm.message)}")
+          label.control-label(for='introduction') 您的意见:
+          .row.margin-bottom-20
+            .col-md-12.col-md-offset-0
+              textarea#message.form-control(type='text', rows='8', name='message', ng-model='contact.message', required='', server-error='')
+              span.help-block(ng-show="showError(contactusForm.message, 'server')") {{errfor.message}}
+
+          p
+            button.btn-u(type='button', ng-disabled='!canSave(contactusForm)', ng-click='submit()') 提交留言
+          
+    .col-md-3.pull-right
+      // Contacts
+      .headline
+        h2 联系我们
+      ul.list-unstyled.who.margin-bottom-30
+        li
+          a(href='#')
+            i.fa.fa-globe
+            | 上海市闸北区恒通路360号17A07
+        li
+          a(href='#')
+            i.fa.fa-envelope
+            | service@hiEngine.cn
+        li
+          a(href='#')
+            i.fa.fa-phone
+            | 021-62187028
+        li
+          a(href='http://www.hiEngine.cn')
+            i.fa.fa-home
+            | http://www.hiEngine.cn
+      // Business Hours
+      .headline
+        h2 关于海竞
+      p
+        |   上海海竞智能科技有限公司是专注于智能建筑领域软件开发和解决方案的提供商，提供如下产品和解决方案：
+      ul.list-unstyled
+        li
+          i.fa.fa-check.color-green
+          |  中央空调监控、计费整体解决方案
+        li
+          i.fa.fa-check.color-green
+          |  中央空调智能控制解决方案
+        li
+          i.fa.fa-check.color-green
+          |  建筑能源管理系统
+        li
+          i.fa.fa-check.color-green
+          |  楼宇实时数据库
+        li
+          i.fa.fa-check.color-green
+          |  楼宇数据通信网关
+          
+div(ng-include='"components/footer/footer.html"')                  

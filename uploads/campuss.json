@@ -1,0 +1,122 @@
+﻿{
+  "ID": "61e555e5-d079-49dd-8b84-ed37d2e24250",
+  "Name": "安徽医科大学附属巢湖医院",
+  "HVACs": [
+    {
+      "ID": "81a9f57a-c2f0-4a7d-8e6a-19290dd2d0d7",
+      "Name": "综合楼空调系统",
+      "EquipmentGroup": [
+        {
+          "ID": "f5621538-0bbf-4805-9769-ba2b0220a8d0",
+          "Name": "1号离心机",
+          "NodeType": "Chiller"
+        },
+        {
+          "ID": "76c95dba-cb29-4e0c-86a8-db93adb03fb4",
+          "Name": "2号螺杆机",
+          "NodeType": "Chiller"
+        },
+        {
+          "ID": "acf09b7f-0cc3-4116-87bf-54ef7eda05b2",
+          "Name": "1号罐式换热器",
+          "NodeType": "HeatExchanger"
+        },
+        {
+          "ID": "f2c9a52e-281f-434a-8fe8-24969af9316f",
+          "Name": "2号罐式换热器",
+          "NodeType": "HeatExchanger"
+        },
+        {
+          "ID": "8bd0cffe-af63-4b56-a16d-78c220454425",
+          "Name": "1号变频冷冻泵",
+          "NodeType": "VFPump"
+        },
+        {
+          "ID": "f58cb8b0-3976-405f-b4c9-da99caa39137",
+          "Name": "2号冷冻泵",
+          "NodeType": "Pump"
+        },
+        {
+          "ID": "a1bfaa06-6988-4d60-a5c6-faef06fc38a9",
+          "Name": "3号变频冷冻泵",
+          "NodeType": "VFPump"
+        },
+        {
+          "ID": "77f06477-22d9-4b26-b587-ae11aae2d759",
+          "Name": "4号冷冻泵",
+          "NodeType": "Pump"
+        },
+        {
+          "ID": "cb5ba9a1-3151-4949-93f4-7107ba1a0ce1",
+          "Name": "1号变频冷却泵",
+          "NodeType": "VFPump"
+        },
+        {
+          "ID": "57cf9e4a-5b44-4244-8f68-782ddf4f41b5",
+          "Name": "2号冷却泵",
+          "NodeType": "Pump"
+        },
+        {
+          "ID": "3da57571-a613-427c-aae4-692db69809dc",
+          "Name": "3号变频冷却泵",
+          "NodeType": "VFPump"
+        },
+        {
+          "ID": "094c030d-afde-40e6-aa97-e672dfe75625",
+          "Name": "4号冷却泵",
+          "NodeType": "Pump"
+        },
+        {
+          "ID": "92145c9e-74ed-4a61-8c82-9d5ec7dbd780",
+          "Name": "1号变频热水泵",
+          "NodeType": "VFPump"
+        },
+        {
+          "ID": "d4da5d47-1dac-47b7-9dae-edda2ff17da2",
+          "Name": "2号热水泵",
+          "NodeType": "Pump"
+        },
+        {
+          "ID": "1c6c84bd-2bd4-4192-80e6-eab26044fd31",
+          "Name": "3号热水泵",
+          "NodeType": "Pump"
+        },
+        {
+          "ID": "06f3ce53-2c4f-4ccb-87dc-befa5e3a5fde",
+          "Name": "1号冷却塔",
+          "NodeType": "CoolingTower"
+        },
+        {
+          "ID": "33390111-81fc-41c8-bbe3-40051ff63055",
+          "Name": "2号冷却塔",
+          "NodeType": "CoolingTower"
+        },
+        {
+          "ID": "117c3b75-ee76-4151-935d-d0db5c33c5de",
+          "Name": "3号冷却塔",
+          "NodeType": "CoolingTower"
+        },
+        {
+          "ID": "fd52da66-2663-4390-875d-3da8f6171de7",
+          "Name": "4号冷却塔",
+          "NodeType": "CoolingTower"
+        },
+        {
+          "ID": "8aa1f67e-1914-46d6-94f0-7bc7a5421bcd",
+          "Name": "5号冷却塔",
+          "NodeType": "CoolingTower"
+        },
+        {
+          "ID": "95ff4c78-d93d-4e5c-a934-dd9d0f740a4d",
+          "Name": "6号冷却塔",
+          "NodeType": "CoolingTower"
+        },
+        {
+          "ID": "61951c2d-d4f9-4c51-a615-40b771ab4b6d",
+          "Name": "综合楼末端区域",
+          "NodeType": "TwoPipesZone"
+        }
+      ]
+    }
+  ]
+}

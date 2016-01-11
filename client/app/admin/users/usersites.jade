@@ -1,0 +1,37 @@
+div
+  .modal-header
+    .row
+      .col-sm-4      
+        h4 Choose User Sites
+      .col-sm-8.pull-right      
+        input.form-control(name='sitename', type='text', ng-model='filters.sitename', ng-model-options='{ debounce: 500 }', ng-change='filtersUpdated()')
+    
+  .modal-body
+    table.table.table-striped
+      thead
+        tr
+          th.stretch sitename
+          th active
+          th
+      tbody
+        tr(ng-repeat='site in sites')
+          td(ng-bind='site.sitename')
+          td(ng-bind='site.isActive')
+          td
+            div.pull-right
+                a(ng-show="isUnderUser(site)") 
+                 img(src='assets/images/ok-blue.png', alt='Alread Add') 
+                a.btn.btn-default.btn-sm(ng-click='addSiteToUser(site)' ng-hide="isUnderUser(site)" tooltip='add to site') 
+                  span.glyphicon.glyphicon-plus
+        tr(ng-show='users.length === 0')
+          td(colspan='5') no sites matched
+    .well(ng-if='pages.total > 1', style="padding: 5px; margin-bottom: 0px; height : 48px;")
+      .btn-group.pull-left
+        button.btn.btn-default(disabled='') Page {{pages.current}} of {{pages.total}}
+        button.btn.btn-default(disabled='') Rows {{items.begin}} - {{items.end}} of {{items.total}}
+      .btn-group.pull-right
+        button.btn.btn-default(ng-class='{disabled: !pages.hasPrev}', ng-click='prev()') Prev
+        button.btn.btn-default(ng-class='{disabled: !pages.hasNext}', ng-click='next()')  Next
+
+  .modal-footer
+    button.btn.btn-warning(ng-click='cancel()') Close

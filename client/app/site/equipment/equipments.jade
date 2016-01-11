@@ -1,0 +1,51 @@
+div.col-sm-12(ng-controller='SiteEquipmentsCtrl')
+  div(ng-show='loading')
+    span
+      img(src='assets/images/loading.gif')
+      | Loading Data ......
+    
+
+  alert(ng-repeat='alert in alerts', type='{{alert.type}}', close='closeAlert($index)') {{alert.msg}}
+  .col-sm-3(ng-hide='loading')
+    accordion(close-others='oneAtATime')
+      accordion-group(ng-repeat='hvac in HVACs', is-open='isActive(hvac)')
+        accordion-heading
+          .accordion-heading-content(ng:class='{collapsed: hvac.isOpen}')
+            img(src="assets/images/iec/Building.png", alt='')
+            | {{hvac.Name}}
+        accordion-body
+          .accordion-inner()
+            ul.list-group.sidebar-nav-v1
+              li.list-group-item(ng-repeat='equipment in hvac.Equipments', role='presentation', ng-class="{'active': isActive(equipment), 'disabled': !isRunning(equipment)}")
+                a(ng-click="showEquipment(equipment, $event)")
+                  img(ng-src="{{getImage(equipment)}}", alt='')
+                  | &nbsp {{equipment.Name}}
+
+  .col-sm-9(ng-hide='loading')
+    .panel.panel-default
+      .panel-heading.panel-title
+        img(ng-src="{{getImage(ActiveEquipment)}}", alt='')
+        | &nbsp{{ActiveEquipment.Name}}
+        div.pull-right
+          a.btn.btn-default.btn-xs(type='button', ng-click='openDialog()', tooltip='More') 
+            span.glyphicon.glyphicon-cog      
+
+      table.table.table-striped
+        thead
+          tr
+            th Property Name
+            th.hidden-sm Value
+            th Stamp
+            th Max Value
+            th Min Value
+            th Status
+        tbody
+          tr(ng-repeat='(key,value) in dataSnapshot')
+            td {{key}}
+            td.hidden-sm {{value.Value}}
+            td {{value.Stamp}}
+            td {{value.Max}}
+            td {{value.Min}}
+            td
+              span.label.label-success {{value.State}}
+       

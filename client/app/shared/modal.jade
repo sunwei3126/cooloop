@@ -1,0 +1,8 @@
+.modal-dialog
+  .modal-header
+    h2 {{modalOptions.headerText}}
+  .modal-body
+    strong {{modalOptions.bodyText}}
+  .modal-footer
+    button.btn(type='button', data-ng-click='modalOptions.close()') {{modalOptions.closeButtonText}}
+    button.btn.btn-primary(data-ng-click='modalOptions.ok();') {{modalOptions.actionButtonText}}

@@ -1,0 +1,70 @@
+.col-sm-7
+  form.form-horizontal(name='adminSiteForm')
+    alert(ng-repeat='alert in alerts', type='{{alert.type}}', close='closeAlert($index)') {{alert.msg}}
+    .form-group(ng-class="{'has-error': hasError(adminSiteForm.sitename)}")
+      label.col-sm-2.control-label(for='sitename') Site Name:
+      .col-sm-10
+        input#sitename.form-control(type='text', name='sitename', ng-model='site.sitename', required='', server-error='')
+        span.help-block(ng-show="showError(adminSiteForm.sitename, 'required')") This field is required
+        span.help-block(ng-show="showError(adminSiteForm.sitename, 'server')") {{errfor.sitename}}
+
+    .form-group(ng-class="{'has-error': hasError(adminSiteForm.siteimg)}")
+      label.col-sm-2.control-label(for='siteimg') Site Image:
+      .col-sm-10
+        input#siteimg.form-control(type='text', name='siteimg', ng-model='site.siteimg', server-error='')
+        span.help-block(ng-show="showError(adminSiteForm.siteimg, 'server')") {{errfor.siteimg}}
+
+    .form-group(ng-class="{'has-error': hasError(adminSiteForm.sitetype)}")
+      label.col-sm-2.control-label(for='sitetype') Site Type:
+      .col-sm-5
+        select.form-control(name='sitetype', ng-model='site.sitetype', ng-model-options='{ debounce: 500 }', ng-options='sitetype.value as sitetype.label for sitetype in sitetypes')
+        span.help-block(ng-show="showError(adminSiteForm.sitetype, 'server')") {{errfor.sitetype}}
+
+    .form-group(ng-class="{'has-error': hasError(adminSiteForm.isActive)}")
+      label.col-sm-2.control-label(for='isActive') isActive:
+      .col-sm-5
+        select.form-control(name='isActive', ng-model='site.isActive', ng-model-options='{ debounce: 500 }', ng-options='isActive.value as isActive.label for isActive in isActives')
+        span.help-block(ng-show="showError(adminSiteForm.isActive, 'server')") {{errfor.isActive}}
+
+    .form-group(ng-class="{'has-error': hasError(adminSiteForm.version)}")
+      label.col-sm-2.control-label(for='version') IEC Version:
+      .col-sm-10
+        input#sitename.form-control(type='text', name='version', ng-model='site.version', server-error='')
+        span.help-block(ng-show="showError(adminSiteForm.version, 'server')") {{errfor.version}}
+
+    .form-group(ng-class="{'has-error': hasError(adminSiteForm.introduction)}")
+      label.col-sm-2.control-label(for='introduction') Introduction:
+      .col-sm-10
+        textarea#introduction.form-control(type='text', name='introduction', ng-model='site.info', server-error='', rows='8')
+        span.help-block(ng-show="showError(adminSiteForm.introduction, 'server')") {{errfor.info}}
+
+    .form-group
+      .btn-group.col-sm-offset-2.col-sm-5
+        button.btn.btn-primary.btn-sm(type='button', ng-disabled='!canSave(adminSiteForm)', ng-click='submit()') Save 
+        button.btn.btn-primary.btn-sm(type='button', ng-disabled='!canSave(adminSiteForm)', ng-click='cancel()') Cancel          
+
+.col-sm-4.pull-right
+  .thumbnail
+    a.fancybox-button.zoomer(data-rel='fancybox-button', title='Click To Zoom')
+      span.overlay-zoom
+        img.img-responsive(ng-src="{{getSiteImage(site)}}", alt='')
+        span.zoom-icon
+        
+  .panel.panel-primary
+    .panel-heading Site Users
+      div.pull-right
+        a.btn.btn-default.btn-xs(type='button', ng-click='openDialog()', tooltip='Add User') 
+          span.glyphicon.glyphicon-plus
+
+    table.table.table-condensed.margin-left-15
+      tbody
+        tr(ng-repeat='user in siteusers')
+          td(ng-bind='user.username')
+          td(ng-bind='user.mobile')
+          td
+            div.pull-right
+              a.btn.btn-warning.btn-xs.margin-right-25(ng-click='removeUser(user)' tooltip='delete') 
+                span.glyphicon.glyphicon-remove 
+        tr(ng-show='users.length === 0')
+          td(colspan='5') no documents matched         
+          

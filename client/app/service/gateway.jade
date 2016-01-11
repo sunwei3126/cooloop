@@ -1,0 +1,163 @@
+div(ng-include='"app/navbar/navbar.html"')
+
+.job-img
+  .job-banner
+    h2 海竞自主研发的楼宇多协议通讯网关，是一款支持多种主流楼宇协议通讯网关，产品支持分布式架构，可远程管理。
+.full-w-block
+  .container
+    .col-sm-offset-1
+      ul.nav.nav-pills.nav-justified
+        li
+          h2
+            a(href='#realtime').areverse
+              i.fa.fa-hdd-o
+              | 多协议支持
+        li
+          h2
+            a(href='#usage').areverse
+              i.fa.fa-wrench
+              | 完善工具
+        li
+          h2
+            a(href='#usability').areverse
+              i.fa.fa-openid
+              | 开放易用
+        li
+          h2
+            a(href='#hardware').areverse
+              i.fa.fa-cogs
+              | 硬件网关
+              
+              
+section#realtime.servive-block-light.section-first
+  .container.content-lg.margin-bottom-20
+    .title-box.margin-bottom-20
+      .title-box-text
+        span.color-blue 多协议 
+        | 支持
+      p
+        | 系统可以同时支持OPC, Modbus, BACnet, oBIX等主流楼宇通讯协议。
+    .col-md-6
+      img.img-responsive(src='assets/images/gateway/gateway0.png', alt='')
+
+    .col-md-6.content-boxes-v3
+      .clearfix.margin-bottom-10
+        i.icon-custom.icon-md.rounded-x.icon-bg-blue.icon-line.fa.fa-share-alt-square
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 协议转换
+          |                             
+          p
+            | 系统可以按照客户配置实现协议之间互相转换。
+      |                     
+      .clearfix.margin-bottom-10
+        i.icon-custom.icon-md.rounded-x.icon-bg-blue.icon-line.fa.fa-sort-numeric-desc
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 数据校验
+          |                             
+          p
+            | 系统内置多种数据校验、映射等功能，保证数据质量同时，简化用户工作。
+      |                     
+      .clearfix.margin-bottom-10
+        i.icon-custom.icon-md.rounded-x.icon-bg-blue.icon-line.fa.fa-crop
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 协议定制
+          |                             
+          p
+            | 系统采用插件式结构，支持协议定制。
+
+section#usage
+  .container.content-lg.margin-bottom-20
+    .title-box.margin-bottom-20
+      .title-box-text
+        | 完善的
+        span.color-green 工具链
+      p
+        | 系统内置监视、数据趋势、协议分析等诸多工具，并可以与海竞实时数据库集成，实现断点续传，数据存储等功能。
+
+    .col-md-6.content-boxes-v3
+      .clearfix.margin-bottom-20
+        i.icon-custom.icon-md.rounded-x.icon-bg-blue.icon-line.fa.fa-question
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 数据分析
+          |                             
+          p
+            | 系统内置数据分析工具，直观展示数据趋势。
+      |                     
+      .clearfix.margin-bottom-20
+        i.icon-custom.icon-md.rounded-x.icon-bg-blue.icon-line.icon-screen-desktop
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 管理工具
+          | 
+          p
+            | 系统内置丰富的管理工具，既可以实时监视系统运行状况，也可以实时监视异常数据和协议包等情况。
+      |                     
+      .clearfix.margin-bottom-20
+        i.icon-custom.icon-md.rounded-x.icon-bg-blue.icon-line.icon-calculator
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 实时数据库集成
+          |                             
+          p
+            | 系统可以与海竞实时数据库集成，从而实现端点续传，数据存储与回溯等功能。
+    .col-md-6
+      img.img-responsive(src='assets/images/rtdb/rtdb0.png', alt='')
+
+  
+section#usability.servive-block-light
+  .container.content-lg
+    .title-box.margin-bottom-20
+      .title-box-text
+        span.color-blue 开放易用
+        | ,分布式架构
+      p
+        | 采用分布式架构，支持用户认证与授权，同时支持多种访问方式，方便用户集成。
+    .col-md-6.margin-bottom-40
+      img.img-responsive(src='assets/images/gateway/gatearch.jpg', alt='')
+
+    .col-md-6.content-boxes-v3
+      .clearfix.margin-bottom-10
+        i.icon-custom.icon-md.rounded-x.icon-bg-green.icon-line.fa.fa-link
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 分布式架构
+          |                             
+          p
+            | 系统采用分布式架构，客户端可以远程访问数据。
+      |                     
+      .clearfix.margin-bottom-10
+        i.icon-custom.icon-md.rounded-x.icon-bg-green.icon-line.fa.fa-share-square-o
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 开放接口
+          |                             
+          p
+            | 系统支持OPC、Web API等诸多方式集成，并提供SDK方便客户二次开发。 
+      |                     
+      .clearfix.margin-bottom-10
+        i.icon-custom.icon-md.rounded-x.icon-bg-green.icon-line.fa.fa-cloud-upload
+        |                         
+        .content-boxes-in-v3
+          h2.heading-sm 数据推送
+          |                             
+          p
+            | 系统支持数据推送，数据报警定制等功能。
+
+section#hardware
+  .container.content-lg.margin-bottom-20
+    .title-box.margin-bottom-20
+      .title-box-text
+        | 即将推出
+        span.color-green 硬件网关
+      p
+        | 多协议硬件网关，2路以太网，4路485，12DI、6DO、6AI、4AO，多功能网关。
+        
+  .container
+    .row.tag-box.tag-box-v5
+        span Coming Soon ......
+
+div(ng-include='"components/footer/footer.html"')                        

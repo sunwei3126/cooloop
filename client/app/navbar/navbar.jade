@@ -1,0 +1,60 @@
+div.header(ng-controller='NavbarCtrl')
+  div.topbar
+    div.container
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-responsive-collapse')
+          span.sr-only Toggle navigation
+          span.fa.fa-bars
+        a.navbar-brand(href='/')
+          img#logo-header(src='assets/images/logo.png', alt='Logo')
+    
+      ul.loginbar.pull-right
+        li(ng-show='isLoggedIn()', ng-class='{active: isActive("/logout")}')
+          a(href='', ng-click='logout()') 退出 
+    
+  div.navbar.navbar-default(role="navigation")
+    div.container
+      div#navbar-main.navbar-collapse.collapse.navbar-responsive-collapse(collapse='isCollapsed')
+        ul.nav.navbar-nav
+          li(ng-repeat='item in menu', ng-class='{active: isActive(item.link)}')
+            a(ng-href='{{item.link}}') {{item.title}}
+            
+          li.dropdown(ng-show='isLoggedIn()', ng-class='{active: isActive("/mysites") || isActive("/portfolio")}')
+            a.dropdown-toggle(href='javascript:void(0);', data-toggle='dropdown')
+              | 项目
+            ul.dropdown-menu
+              li
+                a(href='/mysites') 项目列表
+              li
+                a(href='/portfolio') 项目图
+            
+          li.dropdown(ng-class='{active: isActive("/service")}')
+            a.dropdown-toggle(href='javascript:void(0);', data-toggle='dropdown')
+              | 产品与服务
+            ul.dropdown-menu
+              li
+                a(href='/service/services') 产品
+              li
+                a(href='/service/cases') 项目案例
+              li
+                a(href='/service/faq') 常见问题
+                
+          li.dropdown(ng-class='{active: isActive("/about")}')
+            a.dropdown-toggle(href='javascript:void(0);', data-toggle='dropdown')
+              | 关于
+            ul.dropdown-menu
+              li
+                a(href='/about/contact') 联系我们
+              li
+                a(href='/about/us') 关于海竞
+
+          li.dropdown(ng-show='isAdmin()', ng-class='{active: isActive("/admin")}')
+            a.dropdown-toggle(href='javascript:void(0);', data-toggle='dropdown')
+              | 系统管理
+            ul.dropdown-menu
+              li
+                a(href='/admin/users') Admin Users
+              li
+                a(href='/admin/sites') Admin Sites
+              li
+                a(href='/admin/system') Settings                

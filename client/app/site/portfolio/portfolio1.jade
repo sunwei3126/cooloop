@@ -1,0 +1,48 @@
+.col-md-8.funny-boxes.funny-boxes-top-sea(ng-repeat='site in sites')
+  .row.blog.blog-medium.margin-bottom-40
+    .col-md-9
+        img.img-responsive(ng-src='{{getSiteImage(site)}}', alt='', ng-click='show(site)')
+    .col-md-3
+      h2(ng-click='show(site)') {{site.sitename}}
+      
+      br
+      
+      ul.list-unstyled.list-inline.blog-info
+        li
+          | State: 
+          a.color-green(href='#') OK
+        li
+          i.fa.fa-clock-o
+          |  Jan 02, 2013
+        li
+          p
+          | {{site.info}}
+          
+.col-md-3.magazine-page.pull-right
+  // Posts
+  .posts.margin-bottom-40
+    .headline.headline-md
+      h2 Recent Posts
+    dl.dl-horizontal
+      dt
+        a(href='#')
+          img(src='assets/img/sliders/elastislide/6.jpg', alt='')
+      dd
+        p
+          a(href='#') Responsive Bootstrap 3 Template placerat idelo alac eratamet.
+    dl.dl-horizontal
+      dt
+        a(href='#')
+          img(src='assets/img/sliders/elastislide/10.jpg', alt='')
+      dd
+        p
+          a(href='#') 100+ Amazing Features Layer Slider, Layer Slider, Icons, 60+ Pages etc.
+    dl.dl-horizontal
+      dt
+        a(href='#')
+          img(src='assets/img/sliders/elastislide/11.jpg', alt='')
+      dd
+        p
+          a(href='#') Developer Friendly Code imperdiet condime ntumi mperdiet condim.
+  // /posts
+  // End Posts

@@ -1,0 +1,11 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <h1 class="pull-left">{{stateDescription}}</h1>
+    <ul class="pull-right breadcrumb">
+      <li ng-repeat="crumb in breadcrumbs" ng-class="{ active: $last }">
+        <a ui-sref="{{ crumb.route }}" ng-if="!$last">{{ crumb.displayName }}&nbsp;</a>
+        <span ng-show="$last">{{ crumb.displayName }}</span>
+      </li>
+    </ul>
+  </div>
+</div>

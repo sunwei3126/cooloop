@@ -1,0 +1,71 @@
+#admin-sites-index.col-sm-12
+  .page-header
+    form.form-inline.pull-right(name='addSiteForm')
+      .form-group
+        input.form-control(name='username', type='text', placeholder='enter a site name', ng-model='newsitename', required='')
+        button.btn.btn-primary(type='button', ng-disabled='!canSave(addSiteForm)', ng-click='addSite()') 
+          span.glyphicon.glyphicon-plus
+    h3 Site Lists 
+
+  .col-sm-12      
+    form.filters
+      .row
+        .col-sm-3
+          label Site Name Searchfilters.sitetype
+          input.form-control(name='sitename', type='text', ng-model='filters.sitename', ng-model-options='{ debounce: 500 }', ng-change='filtersUpdated()')
+        .col-sm-3
+          label Site Type
+          select.form-control(name='sitetypes', ng-model='filters.sitetype', ng-model-options='{ debounce: 500 }', ng-options='sitetype.value as sitetype.label for sitetype in sitetypes', ng-change='filtersUpdated()')
+            // <option value="hotel">hotel</option>
+            // <option value="mall">mall</option>
+        .col-sm-2
+          label Is Active
+          select.form-control(name='isActive', ng-model='filters.isActive', ng-model-options='{ debounce: 500 }', ng-options='isActive.value as isActive.label for isActive in isActives', ng-change='filtersUpdated()')
+            // <option value="">either</option>
+            // <option value="yes">yes</option>
+            // <option value="no">no</option>
+        .col-sm-2
+          label Sort By
+          select.form-control(name='sort', ng-model='filters.sort', ng-model-options='{ debounce: 500 }', ng-options='sort.value as sort.label for sort in sorts', ng-change='filtersUpdated()')
+            // <option value="_id">id &#9650;</option>
+            // <option value="-_id">id &#9660;</option>
+            // <option value="username">username &#9650;</option>
+            // <option value="-username">username &#9660;</option>
+            // <option value="email">email &#9650;</option>
+            // <option value="-email">email &#9660;</option>
+        .col-sm-2
+          label Limit
+          select.form-control(name='limit', ng-model='filters.limit', ng-model-options='{ debounce: 500 }', ng-options='limit.value as limit.label for limit in limits', ng-change='filtersUpdated()')
+            // <option value="10">10 items</option>
+            // <option value="20" selected="selected">20 items</option>
+            // <option value="50">50 items</option>
+            // <option value="100">100 items</option>
+    table.table.table-striped
+      thead
+        tr
+          th.stretch sitename
+          th info
+          th active
+          th operations
+      tbody
+        tr(ng-repeat='site in sites')
+          td
+            a(ng-href='/mysites/{{site._id}}') {{site.sitename}}
+          td(ng-bind='site.info | limitTo : 50')
+          td(ng-bind='site.isActive')
+          td
+            div.pull-right  
+              a.btn.btn-default.btn-sm(ng-href='/admin/sites/{{site._id}}' tooltip='edit') 
+                span.glyphicon.glyphicon-edit 
+              a.btn.btn-default.btn-sm(ng-click='delete(site)' tooltip='delete') 
+                span.glyphicon.glyphicon-trash 
+        tr(ng-show='sites.length === 0')
+          td(colspan='5') no documents matched
+    .well(ng-if='pages.total > 1')
+      .btn-group.pull-left
+        button.btn.btn-default(disabled='') Page {{pages.current}} of {{pages.total}}
+        button.btn.btn-default(disabled='') Rows {{items.begin}} - {{items.end}} of {{items.total}}
+      .btn-group.pull-right
+        button.btn.btn-default(ng-class='{disabled: !pages.hasPrev}', ng-click='prev()') Prev
+        button.btn.btn-default(ng-class='{disabled: !pages.hasNext}', ng-click='next()')  Next
+      .clearfix

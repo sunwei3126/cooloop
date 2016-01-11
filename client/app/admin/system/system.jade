@@ -1,0 +1,22 @@
+div(ng-include='"app/navbar/navbar.html"')
+
+breadcrumb
+
+.profile
+  .container.content
+    .row  
+      .col-md-3
+        ul.list-group.sidebar-nav-v1
+          li.list-group-item(ui-sref-active="active")
+            a(ui-sref='adminsystem.default')
+              i.fa.fa-gears
+              | &nbsp Default Settings
+          li.list-group-item.active(ui-sref-active="active")
+            a(ui-sref='adminsystem.mailbox')
+              i.fa.fa-mail-forward
+              | &nbsp Mailbox 
+
+      .col-sm-8.col-sm-offset-1.profile-body
+          div.slide(ui-view='')
+          
+div(ng-include='"components/footer/footer.html"')  

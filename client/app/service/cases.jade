@@ -1,0 +1,23 @@
+div(ng-include='"app/navbar/navbar.html"')
+
+breadcrumb
+
+.container.content
+  .col-sm-12
+    .btn-group.btn-group-justified(role='group', aria-label='Site Types')
+      a.btn.btn-primary(ng-repeat='st in sitetypes', href='#', ng-class="{'btn-primary': isActiveT(st), 'btn-info': !isActiveT(st)}", ng-bind='st.label', role='button', ng-click='setFiler(st)') 
+      
+    hr.devider.devider-dotted  
+    
+  .col-sm-3(ng-repeat='site in sites | filter : getFilter()')
+    .thumbnail
+      span.overlay-zoom
+        img.img-responsive(ng-src='{{getSiteImage(site)}}', alt='', ng-click='show(site)')
+      .projects
+        H4 {{site.sitename}}
+        p {{site.info | limitTo : 35}}
+
+            
+    .clearfix
+
+div(ng-include='"components/footer/footer.html"')                      

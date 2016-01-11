@@ -1,0 +1,7 @@
+.breadcrumbs
+  .container
+    h1.pull-left {{ data.stateDescription }}
+    ul.pull-right.breadcrumb
+      li(ng-repeat='crumb in breadcrumbs', ng-class='{ active: $last }')
+        a(ui-sref='{{ crumb.route }}', ng-if='!$last') {{ crumb.displayName }} 
+        span(ng-show='$last') {{ crumb.displayName }}

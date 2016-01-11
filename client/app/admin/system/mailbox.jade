@@ -1,0 +1,15 @@
+.col-sm-12
+  form(name='mailboxForm')
+    alert(ng-repeat='alert in alerts', type='{{alert.type}}', close='closeAlert($index)') {{alert.msg}}
+    .form-group(ng-class="{'has-error': hasError(mailboxForm.email)}")
+      label.control-label(for='email') Enter Mailbox:
+      input#email.form-control(type='email', name='email', ng-model='email', required='', server-error='')
+      span.help-block(ng-show="showError(mailboxForm.email, 'required')") This field is required
+      span.help-block(ng-show="showError(mailboxForm.email, 'email')") Please enter a valid email
+      span.help-block(ng-show="showError(mailboxForm.email, 'server')") {{errfor.email}}
+    .form-group(ng-class="{'has-error': hasError(mailboxForm.password)}")
+      label.control-label(for='mobile') Enter Mailbox Password:
+      input#password.form-control(type='password', name='password', ng-model='password', required='')
+      span.help-block(ng-show="showError(mailboxForm.password, 'required')") This field is required
+    .form-group
+      button.btn.btn-primary(type='button', ng-disabled='!canSave(mailboxForm)', ng-click='submit()') Save

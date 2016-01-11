@@ -1,0 +1,36 @@
+div(ng-include='"app/navbar/navbar.html"')
+
+.container
+  #signup.row
+    .col-sm-6
+      .page-header
+        h1 Sign Up
+      form(name='signupForm')
+        alert(ng-repeat='alert in alerts', type='{{alert.type}}', close='closeAlert($index)') {{alert.msg}}
+        .form-group(ng-class="{'has-error': hasError(signupForm.username)}")
+          label.control-label(for='username') Pick a Username:
+          input#username.form-control(type='text', name='username', ng-model='user.username', required='', server-error='')
+          span.help-block(ng-show="showError(signupForm.username, 'required')") This field is required
+          span.help-block(ng-show="showError(signupForm.username, 'server')") {{errfor.username}}
+        .form-group(ng-class="{'has-error': hasError(signupForm.email)}")
+          label.control-label(for='email') Enter Your Email:
+          input#email.form-control(type='email', name='email', ng-model='user.email', required='', server-error='')
+          span.help-block(ng-show="showError(signupForm.email, 'required')") This field is required
+          span.help-block(ng-show="showError(signupForm.email, 'email')") Please enter a valid email
+          span.help-block(ng-show="showError(signupForm.email, 'server')") {{errfor.email}}
+        .form-group(ng-class="{'has-error': hasError(signupForm.mobile)}")
+          label.control-label(for='mobile') Enter Your Mobile:
+          input#mobile.form-control(type='text', name='mobile', ng-model='user.mobile', server-error='')
+          span.help-block(ng-show="showError(signupForm.mobile, 'mobile')") This field is required
+          span.help-block(ng-show="showError(signupForm.mobile, 'mobile')") Please enter a valid mobile
+          span.help-block(ng-show="showError(signupForm.mobile, 'server')") {{errfor.mobile}}          
+        .form-group(ng-class="{'has-error': hasError(signupForm.password)}")
+          label.control-label(for='password') Create a Password:
+          input#password.form-control(type='password', name='password', ng-model='user.password', required='', server-error='')
+          span.help-block(ng-show="showError(signupForm.password, 'required')") This field is required
+          span.help-block(ng-show="showError(signupForm.password, 'server')") {{errfor.password}}
+        .form-group
+          button.btn.btn-primary.btn-signup(type='button', ng-disabled='!canSave(signupForm)', ng-click='submit()') Create Account          
+
+
+div(ng-include='"components/footer/footer.html"')        

@@ -1,0 +1,17 @@
+.col-sm-6(ng-repeat='site in sites')
+  .thumbnail
+    a.fancybox-button.zoomer(data-rel='fancybox-button', title='{{site.sitename}}', ng-click='show(site)')
+      span.overlay-zoom
+        img.img-responsive(ng-src='{{getSiteImage(site)}}', alt='', ng-click='show(site)')
+        span.zoom-icon
+      .projects
+        h2 {{site.sitename}}
+        ul.list-unstyled.list-inline.blog-info-v2
+          li
+            | State: 
+            a.color-green(href='#') OK
+          li
+            i.fa.fa-clock-o
+            |  Jan 02, 2013
+        .progress.progress-u.progress-xxs
+          .progress-bar.progress-bar-u(role='progressbar', aria-valuenow='100', aria-valuemin='0', aria-valuemax='100', style='width: 100%')

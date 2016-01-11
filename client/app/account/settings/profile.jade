@@ -1,0 +1,17 @@
+.col-sm-12
+  form(name='profileForm')
+    alert(ng-repeat='alert in alerts', type='{{alert.type}}', close='closeAlert($index)') {{alert.msg}}
+    .form-group(ng-class="{'has-error': hasError(profileForm.email)}")
+      label.control-label(for='email') Enter Your Email:
+      input#email.form-control(type='email', name='email', ng-model='user.email', required='', server-error='')
+      span.help-block(ng-show="showError(profileForm.email, 'required')") This field is required
+      span.help-block(ng-show="showError(profileForm.email, 'email')") Please enter a valid email
+      span.help-block(ng-show="showError(profileForm.email, 'server')") {{errfor.email}}
+    .form-group(ng-class="{'has-error': hasError(profileForm.mobile)}")
+      label.control-label(for='mobile') Enter Your Mobile:
+      input#mobile.form-control(type='text', name='mobile', ng-model='user.mobile', server-error='')
+      span.help-block(ng-show="showError(profileForm.mobile, 'mobile')") This field is required
+      span.help-block(ng-show="showError(profileForm.mobile, 'mobile')") Please enter a valid mobile
+      span.help-block(ng-show="showError(profileForm.mobile, 'server')") {{errfor.mobile}}          
+    .form-group
+      button.btn.btn-primary(type='button', ng-disabled='!canSave(profileForm)', ng-click='submit()') Save

@@ -1,0 +1,151 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title>hiEngine | Welcome...</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/plugins/bxslider/jquery.bxslider.css">
+    <link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="assets/plugins/layer-slider/layerslider/css/layerslider.css">
+    <!-- CSS Pages Style -->
+
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/pages/page_one.css">
+    <link rel="stylesheet" href="assets/css/themes/default.css" id="style_color">
+    <link rel="stylesheet" href="assets/css/pages/page_job.css">
+
+    <!-- CSS Theme -->
+    <link rel="stylesheet" href="app/app.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+  </head>
+  <body ng-app="adryallApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <div ui-view="" class="wrapper"></div>
+    <!-- JS Global Compulsory -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="assets/plugins/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- JS Implementing Plugins -->
+    <script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
+    <script src="assets/js/plugins/jquery.ui.widget.js"></script>
+    <script type="text/javascript" src="assets/plugins/bxslider/jquery.bxslider.js"></script>
+        <!-- build:js({.tmp,client}) app/app.js -->
+
+        <script type="text/javascript" src="assets/js/app.js"></script>
+        <script type="text/javascript" src="assets/js/pages/index.js"></script>
+        <script type="text/javascript">
+            jQuery(document).ready(function() {
+                App.init();
+                //App.initSliders();
+                //App.initBxSlider();
+            });
+        </script>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <script src="assets/js/respond.js"></script>
+    <![endif]-->
+
+    <!-- build:js(client) app/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+      <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+      <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+      <script src="bower_components/firebase/firebase.js"></script>
+      <script src="bower_components/angularfire/dist/angularfire.js"></script>
+      <script src="bower_components/angular-translate/angular-translate.js"></script>
+      <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+      <!-- endbower -->
+    <!-- endbuild -->
+          <script src="app/app.js"></script>
+          <!-- injector:js -->
+          <script src="app/about/about.js"></script>
+          <script src="app/about/contact/contact.controller.js"></script>
+          <script src="app/about/us/us.controller.js"></script>
+          <script src="app/account/account.js"></script>
+          <script src="app/account/login/login.controller.js"></script>
+          <script src="app/account/settings/notification.controller.js"></script>
+          <script src="app/account/settings/password.controller.js"></script>
+          <script src="app/account/settings/profile.controller.js"></script>
+          <script src="app/account/settings/settings.js"></script>
+          <script src="app/account/signup/signup.controller.js"></script>
+          <script src="app/admin/admin.js"></script>
+          <script src="app/admin/sites/adminsite.controller.js"></script>
+          <script src="app/admin/sites/adminsites.controller.js"></script>
+          <script src="app/admin/sites/siteusers.controller.js"></script>
+          <script src="app/admin/system/default.controller.js"></script>
+          <script src="app/admin/system/mailbox.controller.js"></script>
+          <script src="app/admin/users/adminuser.controller.js"></script>
+          <script src="app/admin/users/adminuserpwd.controller.js"></script>
+          <script src="app/admin/users/adminusers.controller.js"></script>
+          <script src="app/admin/users/usersites.controller.js"></script>
+          <script src="app/config.js"></script>
+          <script src="app/main/main.controller.js"></script>
+          <script src="app/main/main.js"></script>
+          <script src="app/navbar/navbar.controller.js"></script>
+          <script src="app/service/cases.controller.js"></script>
+          <script src="app/service/service.js"></script>
+          <script src="app/site/alarm/alarms.controller.js"></script>
+          <script src="app/site/data/data.controller.js"></script>
+          <script src="app/site/equipment/equipments.controller.js"></script>
+          <script src="app/site/hmi/hmi.controller.js"></script>
+          <script src="app/site/panel.controller.js"></script>
+          <script src="app/site/portfolio/sitelist.controller.js"></script>
+          <script src="app/site/site.js"></script>
+          <script src="components/auth/auth.service.js"></script>
+          <script src="components/auth/user.service.js"></script>
+          <script src="components/directives/breadcrumb.js"></script>
+          <script src="components/directives/campusuploader.js"></script>
+          <script src="components/directives/gravatar.js"></script>
+          <script src="components/directives/serverError.js"></script>
+          <script src="components/fileuploads/jquery.fileupload.js"></script>
+          <script src="components/fileuploads/jquery.iframe-transport.js"></script>
+          <script src="components/mongoose-error/mongoose-error.directive.js"></script>
+          <script src="components/security/authorization.js"></script>
+          <script src="components/security/index.js"></script>
+          <script src="components/security/interceptor.js"></script>
+          <script src="components/security/retryQueue.js"></script>
+          <script src="components/security/security.js"></script>
+          <script src="components/services/aboutResource.js"></script>
+          <script src="components/services/accountResource.js"></script>
+          <script src="components/services/adminResource.js"></script>
+          <script src="components/services/httpRequestTracker.js"></script>
+          <script src="components/services/i18nNotifications.js"></script>
+          <script src="components/services/locService.js"></script>
+          <script src="components/services/localizedMessages.js"></script>
+          <script src="components/services/modalService.js"></script>
+          <script src="components/services/notifications.js"></script>
+          <script src="components/services/siteResource.js"></script>
+          <script src="components/services/utility.js"></script>
+          <!-- endinjector -->
+        <!-- endbuild -->
+</body>
+</html>

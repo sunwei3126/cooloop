@@ -1,0 +1,50 @@
+.col-sm-8
+  form.form-horizontal(name='setUserForm')
+    alert(ng-repeat='alert in alerts', type='{{alert.type}}', close='closeAlert($index)') {{alert.msg}}
+    .form-group(ng-class="{'has-error': hasError(setUserForm.email)}")
+      label.col-sm-2.control-label(for='email') Email:
+      .col-sm-10
+        input#email.form-control(type='email', name='email', ng-model='user.email', required='', server-error='')
+        span.help-block(ng-show="showError(setUserForm.email, 'required')") This field is required
+        span.help-block(ng-show="showError(setUserForm.email, 'email')") Please enter a valid email
+        span.help-block(ng-show="showError(setUserForm.email, 'server')") {{errfor.email}}
+    .form-group(ng-class="{'has-error': hasError(setUserForm.mobile)}")
+      label.col-sm-2.control-label(for='mobile') Mobile:
+      .col-sm-10
+        input#mobile.form-control(type='text', name='mobile', ng-model='user.mobile', server-error='')
+        span.help-block(ng-show="showError(setUserForm.mobile, 'mobile')") This field is required
+        span.help-block(ng-show="showError(setUserForm.mobile, 'mobile')") Please enter a valid mobile
+        span.help-block(ng-show="showError(setUserForm.mobile, 'server')") {{errfor.mobile}}          
+    .form-group(ng-class="{'has-error': hasError(setUserForm.role)}")
+      label.col-sm-2.control-label(for='isActive') Role:
+      .col-sm-5
+        select.form-control(name='role', ng-model='user.role', ng-model-options='{ debounce: 500 }', ng-options='role.value as role.label for role in roles')
+        span.help-block(ng-show="showError(setUserForm.role, 'server')") {{errfor.role}}
+    .form-group(ng-class="{'has-error': hasError(setUserForm.isActive)}")
+      label.col-sm-2.control-label(for='isActive') Actived:
+      .col-sm-5
+        select.form-control(name='isActive', ng-model='user.isActive', ng-model-options='{ debounce: 500 }', ng-options='isActive.value as isActive.label for isActive in isActives')
+        span.help-block(ng-show="showError(setUserForm.isActive, 'server')") {{errfor.isActive}}
+
+    .form-group
+      .btn-group.col-sm-offset-2.col-sm-5
+        button.btn.btn-primary.btn-sm(type='button', ng-disabled='!canSave(setUserForm)', ng-click='submit()') Save 
+        button.btn.btn-primary.btn-sm(type='button', ng-disabled='!canSave(setUserForm)', ng-click='cancel()') Cancel          
+
+.col-sm-3.pull-right
+  .panel.panel-primary
+    .panel-heading Sites
+      div.pull-right
+        a.btn.btn-default.btn-xs(type='button', ng-click='openDialog()', tooltip='Add Site') 
+          span.glyphicon.glyphicon-plus
+
+    table.table.table-condensed
+      tbody
+        tr(ng-repeat='site in user.Sites')
+          td(ng-bind='site.sitename')
+          td
+            div.pull-right
+              a.btn.btn-warning.btn-xs(ng-click='removeSite(site)' tooltip='remove site from user') 
+                span.glyphicon.glyphicon-remove 
+        tr(ng-show='UserSites.length === 0')
+          td(colspan='5') no sites matched

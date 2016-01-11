@@ -1,0 +1,16 @@
+div.col-sm-12(ng-controller='SiteAlarmsCtrl')
+  .table-responsive
+    table.table.table-bordered.table-striped
+      thead
+        tr
+          th Stamp
+          th.hidden-sm Source
+          th Level
+          th Detail
+      tbody
+        tr(ng-repeat='alarm in alarms')
+          td {{alarm.Stamp}}
+          td {{alarm.Source}}
+          td {{alarm.Level}}
+          td {{alarm.Detail}}
+        

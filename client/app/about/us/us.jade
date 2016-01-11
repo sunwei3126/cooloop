@@ -1,0 +1,95 @@
+div(ng-include='"app/navbar/navbar.html"')
+
+breadcrumb
+
+.title-box
+  .title-box-text
+    | 上海
+    span.color-green 海竞
+    | 智能科技有限公司 
+  p
+    | 致力于将先进过程控制技术和前沿信息技术应用于传统楼宇自动化行业，提高建筑能源效率，增强信息融合，促进人与建筑和谐相处。
+
+.container.content
+  .row
+    .headline
+      h2 海竞业务范围
+  
+    .col-md-6
+      .row.portfolio-item1
+        .col-sm-11
+          p
+            | &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp上海海竞智能科技有限公司是一家专注于建筑智能化的科技企业，为客户不断提供创新的智能软硬件产品和整体解决方案，在中央空调智能控制系统、
+            | 楼宇能源管理、智能楼宇管理系统等领域有多年的积累，海竞智能的目标是成为中国最专业的自主研发、拥有核心产权的智能建筑软硬件供应商和服务商，
+            | 海竞的业务范围包括： 
+            
+          ul.list-unstyled.margin-bottom-20
+            li
+              i.fa.fa-check.color-green
+              |  中央空调智能控制系统产品咨询、销售、实施和服务
+            li
+              i.fa.fa-check.color-green
+              |  中央空调监控、计费整体解决方案
+            li
+              i.fa.fa-check.color-green
+              | 建筑能源管理系统产品咨询、销售、实施和服务
+            li
+              i.fa.fa-check.color-green
+              |  智能楼宇信息平台软件产品咨询、销售、实施和服务
+    .col-md-6
+      ul.bxslider(data-bx-slider='mode: "horizontal", controls: true, infiniteLoop: false')
+        li(data-ng-repeat='s in slides', data-notify-when-repeat-finished='')
+          img(data-ng-src='{{s.img}}', title="{{s.title}}")
+              
+
+.about-skills
+  .container
+    .title-box-v2
+      h2
+        | 选择
+        span.color-green 海竞
+      p
+        | 上海海竞智能科技有限公司坚持以诚信为本，技术和服务相融合的企业理念，我们的产品、方案和服务承载着海竞为客户提供最优秀的产品同时实现自我价值的孜孜不倦的追求。
+  
+  .container
+    .col-md-4.col-sm-6.info-blocks
+      i.fa.fa-magnet.icon-info-blocks
+      .info-blocks-in
+        h3 深厚的技术力量
+        p
+          | 海竞具有很强的研发能力，企业遵循六西格玛管理策略，团队具有硕士以上学历，十年以上知名企业工作经验，曾经成功研发、移交多个大中型工业软件。
+    .col-sm-4.info-blocks
+      i.fa.fa-flag-o.icon-info-blocks
+      .info-blocks-in
+        h3 多年的的行业积累
+        p
+          | 海竞在中央空调智能控制领域、智能楼宇信息平台等领域有着十年以上的行业积累，团队具有丰富的研发、调试和现场实施经验。
+    .col-sm-4.info-blocks
+      i.fa.fa-rocket.icon-info-blocks
+      .info-blocks-in
+        h3 高效的作业流程
+        p
+          | 海竞秉承高效、专业的理念，制定了一套科学的作业流程，极大地提高了工作效率和作业质量，充分的保证了客户的服务优质高效的完成。
+  .container
+    .col-md-4.col-sm-6.info-blocks
+      i.fa.fa-thumbs-o-up.icon-info-blocks
+      .info-blocks-in
+        h3 行业领先的产品
+        p
+          | 海竞拥有诸多行业领先的，具有自主知识产权的产品，这些产品融合了很多先进技术，为客户和社会带来巨大价值。
+    .col-sm-4.info-blocks
+      i.fa.fa-check-square-o.icon-info-blocks
+      .info-blocks-in
+        h3 众多的成功案例
+        p
+          | 海竞产品已经成功应用于酒店、商业综合体、写字楼等领域，客户的认可与好评，是海竞不断前进的动力源泉。
+    .col-sm-4.info-blocks
+      i.fa.fa-users.icon-info-blocks
+      .info-blocks-in
+        h3 专业的服务体系
+        p
+          | 海竞提供专业的服务，高质量的售后保证，充分满足客户当前和未来的需求，并愿意与客户建立长久合作关系，共同营造美好未来。
+  
+
+              
+div(ng-include='"components/footer/footer.html"')                      
